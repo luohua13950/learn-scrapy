@@ -8,4 +8,6 @@
 
 class NewsPipeline(object):
     def process_item(self, item, spider):
+        print("^"*10)
+        print(spider.__dict__)
         return item

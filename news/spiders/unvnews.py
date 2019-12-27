@@ -28,7 +28,7 @@ class UnvnewsSpider(CrawlSpider):
         loders.add_xpath("source","//span[@class='source']/a/text()")
         loders.add_xpath("times","//div[@class='chan_newsInfo_source']/span[@class='time']/text()")
         loders.add_value("website","中华网")
-        print(loders.load_item())
+        #print(loders.load_item())
         yield loders.load_item()
 
 
@@ -36,5 +36,7 @@ class UnvnewsSpider(CrawlSpider):
         return link[0:2]
 
 
-    def process_req(self, request):
+    def process_req(self, request,response):
+        print("*"*20)
+        print(response.status)
         return request

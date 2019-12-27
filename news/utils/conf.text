@@ -1,0 +1,22 @@
+{
+    "item": {
+        "title": {
+            "rule1": "//h1[@id='chan_newsTitle']/text()",
+            "rule2": "//h1",
+            "method": [
+                "add_value",
+                "add_xpath"
+            ]
+        },
+        "content": {
+            "rule1": "//div[@id='chan_newsDetail']//p/text()",
+            "rule2": "//div[@id='chan_newsDetail']"
+        },
+        "source": {
+            "rule1": "//div[@id='chan_newsDetail']//p/text()"
+        },
+        "times": {
+            "rule1": "//div[@class='chan_newsInfo_source']/span[@class='time']/text()"
+        }
+    }
+}
