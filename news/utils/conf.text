@@ -1,22 +1,38 @@
 {
-    "item": {
+    "spider":"UnvnewsSpider",
+	"name":"unvnews",
+	"allowed_domains":['news.china.com'],
+	"start_urls":['http://news.china.com/domestic/'],
+	"item": {
         "title": {
-            "rule1": "//h1[@id='chan_newsTitle']/text()",
-            "rule2": "//h1",
+            "rule": ["//h1[@id='chan_newsTitle']/text()"],
             "method": [
-                "add_value",
                 "add_xpath"
             ]
         },
         "content": {
-            "rule1": "//div[@id='chan_newsDetail']//p/text()",
-            "rule2": "//div[@id='chan_newsDetail']"
+            "rule": ["//div[@id='chan_newsDetail']//p/text()"],
+            "method": [
+                "add_xpath"
+            ]
         },
         "source": {
-            "rule1": "//div[@id='chan_newsDetail']//p/text()"
+            "rule": ["//span[@class='source']/a/text()"],
+             "method": [
+                "add_xpath"
+            ]
         },
         "times": {
-            "rule1": "//div[@class='chan_newsInfo_source']/span[@class='time']/text()"
+            "rule": ["//div[@class='chan_newsInfo_source']/span[@class='time']/text()"],
+            "method": [
+                "add_xpath"
+            ]
+        },
+        "website":{
+            "rule":["中华网"],
+            "method": [
+                "add_value"
+            ]
         }
     }
 }

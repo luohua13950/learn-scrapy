@@ -1,12 +1,14 @@
 __author__ = 'luohua139'
 
 from scrapy.crawler import CrawlerProcess
-
-
-
+from scrapy.utils.project import get_config,get_project_settings
+from news.spiders.unvnews import UnvnewsSpider
+import pymongo
 def run():
-    crawl = CrawlerProcess()
-
+    setting = dict(get_project_settings())
+    process  = CrawlerProcess(get_project_settings())
+    process.crawl(UnvnewsSpider)
+    process.start()
 
 
 

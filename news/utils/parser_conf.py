@@ -1,6 +1,6 @@
 __author__ = 'luohua139'
 import json
-
+import jsonpath
 
 
 def json2txt():
@@ -25,6 +25,16 @@ def json2txt():
     with open("conf.text","w",encoding="utf-8") as fp:
         conf_json = json.dump(conf_dict,fp,ensure_ascii=False,indent=4)
 
+def read_conf():
+    with open("conf.text","r",encoding="utf-8") as fp:
+        conf_json = json.load(fp)
+    return conf_json
+
 
 if __name__ == '__main__':
-    json2txt()
+    conf_dict = read_conf()
+    for k,v in conf_dict["item"].items():
+        #for rule,st in v.items():
+            #print(rule,st)
+        print(v["rule"])
+        print(v["method"])

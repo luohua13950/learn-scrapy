@@ -27,7 +27,7 @@ LOG_LEVEL = "INFO"
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 2
+#DOWNLOAD_DELAY = 1
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -89,3 +89,14 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+# MONGODB 主机名
+MONGODB_HOST = "127.0.0.1"
+MONGODB_URI = 'mongodb://root:123456@118.25.181.239:27017'
+# MONGODB 端口号
+MONGODB_PORT = 27017
+MONGODB_USER = "luohua"
+MONGODB_PASSWORD = "123456"
+# 数据库名称
+MONGODB_DBNAME = "news"
+# 存放数据的表名称
+MONGODB_COLLECTIONS = "new"
